@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+{% load widget_tweaks %}
+{% load bootstrap %}
+{% block content %}
+<div class="container" style="padding:40px;">
+    <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">Title:</label>
+        </div>
+        <div class="col-75">
+          
+          {{ form.title|add_class:"css_class_1 css_class_2" }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname">Description:</label>
+        </div>
+        <div class="col-75">
+          
+          {{ form.desc|add_class:"css_class_1 css_class_2"  }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="country">Thumbnail:</label>
+        </div>
+        <div class="col-75">
+          {{ form.img|add_class:"css_class_1 css_class_2" }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="subject">Video(MP4 Format):</label>
+        </div>
+        <div class="col-75">
+          
+          {{ form.video|add_class:"css_class_1 css_class_2"  }}
+        </div>
+      </div>
+      <div class="row"><br>
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+  </div>
+  
+
+{% endblock %}
